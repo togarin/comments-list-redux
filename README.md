@@ -16,6 +16,7 @@
 
 #### Using:  
 [Create React App](https://github.com/facebook/create-react-app).   
+[Redux](https://github.com/reduxjs/redux).   
 React Hooks.   
 [MaterialUI](https://github.com/mui-org/material-ui).
 
