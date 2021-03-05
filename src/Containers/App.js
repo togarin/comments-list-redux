@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import {Button} from "@material-ui/core";
+import {Button, Paper} from "@material-ui/core";
 import { connect } from "react-redux";
 import { Container } from "@material-ui/core";
 import CommentsList from "../Components/CommentsList";
 import AddCommentDialog from "../Components/AddComment";
+import NoComments from "../Components/NoComments.js";
 import { addComment, deleteComment } from "../actions";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -24,17 +25,17 @@ const App = (props) => {
 
   return (
     <>
-      <Container maxWidth="sm">
-        {props.comments.map((comment) => (
+      <Container maxWidth="sm" component={Paper} >
+        {props.comments.length>0 ? props.comments.map((comment) => (
           <CommentsList
-            id={comment.id}
+            key={comment.id}
             author={comment.author}
             text = {comment.text}
             createdOn={comment.createdOn}
             handleDelete={() => props.delete(comment.id)}
 
           />
-        ))}
+        )) : (<NoComments/>)}
         <AddCommentDialog
           isOpen={commentModal}
           handleModalClose={() => setCommentModal(false)}
@@ -70,8 +71,8 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispachToProps = (dispach) => ({
-  add: (author, text, createdOn) =>
-    dispach(addComment(author, text, createdOn)),
+  add: (id, author, text, createdOn) =>
+    dispach(addComment(id, author, text, createdOn)),
   delete: (id) => dispach(deleteComment(id)),
 });
 

@@ -7,7 +7,6 @@ import {
   ListItem,
   ListItemText,
   Typography,
-  Divider,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
@@ -57,7 +56,6 @@ const CommentsList = (props) => {
             <Delete />
           </IconButton>
         </ListItem>
-        <Divider variant="middle" component="li"/>
       </List>
     </>
   );
