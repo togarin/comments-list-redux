@@ -1,5 +1,6 @@
 const unId = () => `f${(+new Date()).toString(16)}`;
-const date = ()=>`${new Date().toLocaleString()}`;
+const date = () => `${new Date().toLocaleString()}`;
+
 
 export const addComment = (author, text) => ({
   type: "ADD_COMMENT",
