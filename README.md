@@ -16,8 +16,9 @@
 
 #### Using:  
 [Create React App](https://github.com/facebook/create-react-app).   
-[Redux](https://github.com/reduxjs/redux).   
 React Hooks.   
+[Redux](https://github.com/reduxjs/redux).   
+[Redux Persist](https://github.com/rt2zz/redux-persist).   
 [MaterialUI](https://github.com/mui-org/material-ui).
 
 Перед запуском необходима установка зависимостей:  
